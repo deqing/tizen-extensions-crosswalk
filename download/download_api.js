@@ -243,6 +243,7 @@ exports.start = function(request, listener) {
   }
   requests[request.uid] = request;
   if (typeof listener != 'undefined') {
+    ensureType(listener, 'object');
     exports.setListener(request.uid, listener);
   }
   postMessage({
